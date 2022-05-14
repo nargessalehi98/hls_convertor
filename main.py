@@ -59,7 +59,7 @@ def excel_reader(file_name, path_to_save):
 
 if __name__ == "__main__":
     try:
-        print("Enter csv file_name (placed in root project) and path_to_save in Two separate lines:")
+        print("Enter csv file_name (placed in root of project) and path_to_save in Two separate lines:")
         file_name = input()
         path_to_save = input()
         excel_reader(file_name, path_to_save)
