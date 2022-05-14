@@ -47,14 +47,17 @@ def excel_reader(file_name, path_to_save):
     :param path_to_save:
     :return:
     """
-    with open(file_name) as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
-        next(csv_reader)
-        try:
-            for row in csv_reader:
-                downloader(row[1], path_to_save, row[0])
-        except Exception as e:
-            print(str(e))
+    try:
+        with open(file_name) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            next(csv_reader)
+            try:
+                for row in csv_reader:
+                    downloader(row[1], path_to_save, row[0])
+            except Exception as e:
+                print(str(e))
+    except Exception as err:
+        print(err)
 
 
 if __name__ == "__main__":
